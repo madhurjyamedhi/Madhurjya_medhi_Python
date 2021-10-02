@@ -1,0 +1,24 @@
+#function for reseverse a string
+def reverseSting(text):
+    index = -1 #takling index from -1
+    
+    # Now traverse input string and temp in a single loop. Wherever there is an alphabetic
+    # character is input string, replace it with the current character of temp[]
+    for i in range(len(text)-1, int(len(text)/2), -1):     
+        if text[i].isalpha():
+            temp = text[i] #Copy alphabetic characters from the given array to temp[].
+
+            while True: 
+                index += 1 #increase the index
+                if text[index].isalpha(): 
+                    text[i] = text[index]
+                    text[index] = temp
+                    break
+    return text
+      
+
+# Driver code
+string = input()
+print ("Input string: ", string)
+string = reverseSting(list(string)) #Reverse temp[] using standard string reversal algorithm. 
+print ("Output string: ", "".join(string))
